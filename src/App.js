@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React  from 'react';
+import Sidevar from './components/Sidevar';
+import { makeStyles } from '@material-ui/core';
+import Tarjeta from './components/Tarjeta';
+import Tabla from './components/Tabla';
+import Modal from "./components/Modal"
+
+
+
+const useStyles = makeStyles((theme) => ({
+
+container :  {
+  paddingLeft : '15px',
+  marginTop: '-15px'
+},
+center : {
+  height:"100px",
+  display:"flex",
+  justifyContent:"center",
+  alignItems:"center"
+
+}
+}));
 
 function App() {
+
+  const classes = useStyles()
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<Sidevar />  
+
+
+
+<div className={classes.container} />
+
+
+        <Tarjeta />
+        <div className={classes.center}>
+        <Modal   />
+        </div>
+        <Tabla />
+   
+
     </div>
   );
 }
 
 export default App;
+
+
+
